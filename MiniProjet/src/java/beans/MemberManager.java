@@ -48,7 +48,7 @@ public class MemberManager {
             context.getExternalContext().getSessionMap().put("user", user);
             return "AdminDashbord";
         } else {
-            return "signin";
+            return "home";
         }
 
     }
