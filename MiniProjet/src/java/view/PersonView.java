@@ -61,7 +61,10 @@ public class PersonView {
         }
         if (b) {
             context.getExternalContext().getSessionMap().put("user", user);
-            return "home";
+            if (user.getName().equals("admin")){
+                return "admin";
+            }else
+                return "home";
         } else {
             return "login";
         }
