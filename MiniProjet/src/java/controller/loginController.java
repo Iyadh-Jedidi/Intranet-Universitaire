@@ -34,6 +34,17 @@ public class loginController {
     @EJB
     private PersonFacade personFacade;
     private Person person;
+    private Boolean isLogged=false;
+
+    public Boolean getIsLogged() {
+        return isLogged;
+    }
+
+    public void setIsLogged(Boolean isLogged) {
+        this.isLogged = isLogged;
+    }
+    
+    
     
     public Person getPerson(){
         return person;
@@ -58,17 +69,20 @@ public class loginController {
         if (b) {
             context.getExternalContext().getSessionMap().put("user", user);
             if (user.getName().equals("admin")){
+                isLogged=true;
                 return "admin?faces-redirect=true";
  
             }else
                 return "home?faces-redirect=true";
         } else {
+            isLogged=true;
             context.addMessage(null, new FacesMessage("Email ou mot passe est incorrect"));
             return "login";
         }
 
     }
     public String logout() {
+        isLogged=false;
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index?faces-redirect=true";
     }
