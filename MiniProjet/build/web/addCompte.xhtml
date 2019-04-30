@@ -9,16 +9,16 @@
         <h:form>
             <h:outputLabel value="Add Compte : "/><br/>
             name
-            <h:inputText value="#{signUpController.person.name}"/><br/>
+            <h:inputText value="#{adminController.person.name}"/><br/>
             lastname
-            <h:inputText value="#{signUpController.person.lastname}"/><br/>
+            <h:inputText value="#{adminController.person.lastname}"/><br/>
             email:
-            <h:inputText value="#{signUpController.person.email}"/><br/>
+            <h:inputText value="#{adminController.person.email}"/><br/>
             password:
-            <h:inputSecret value="#{signUpController.person.password}" /><br/>
+            <h:inputSecret value="#{adminController.person.password}" /><br/>
             role:
-            <h:inputText value="#{signUpController.person.role}"/><br/>
-            <h:commandButton  value="Add" action="#{signUpController.postPerson()}" />
+            <h:inputText value="#{adminController.person.role}"/><br/>
+            <h:commandButton  value="Add" action="#{adminController.postPerson()}" />
             <h:commandButton value="cancel" action="admin" /> 
         </h:form>
     </h:body>
