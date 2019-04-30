@@ -10,6 +10,7 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
@@ -57,15 +58,19 @@ public class loginController {
         if (b) {
             context.getExternalContext().getSessionMap().put("user", user);
             if (user.getName().equals("admin")){
-                return "admin";
-                
-                
+                return "admin?faces-redirect=true";
+ 
             }else
-                return "home";
+                return "home?faces-redirect=true";
         } else {
+            context.addMessage(null, new FacesMessage("Email ou mot passe est incorrect"));
             return "login";
         }
 
+    }
+    public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "index?faces-redirect=true";
     }
     
 }
