@@ -8,20 +8,7 @@
     <h:body>
        <h:outputLink value="login.xhtml" >login</h:outputLink><br/>
         <h:outputLink  value="register.xhtml" >Register</h:outputLink><br/>
-        <h:form>
-            <h:outputLabel value="Sign Up : "/><br/>
-            name
-            <h:inputText value="#{personView.person.name}"/><br/>
-            lastname
-            <h:inputText value="#{personView.person.lastname}"/><br/>
-            password:
-            <h:inputText value="#{personView.person.password}" /><br/>
-            email:
-            <h:inputText value="#{personView.person.email}"/><br/>
-            role:
-            <h:inputText value="#{personView.person.role}"/><br/>
-            <h:commandButton  value="Sign " action="#{personView.postPerson()}" />
-        </h:form>
+        
     </h:body>
 </html>
 

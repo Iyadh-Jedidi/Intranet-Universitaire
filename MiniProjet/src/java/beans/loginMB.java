@@ -9,31 +9,22 @@ import model.Person;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
-import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import boundary.PersonFacade;
 
 /**
  *
  * @author ASUS
  */
-@Table(name = "MEMBRE")
-@XmlRootElement
-@javax.faces.bean.ManagedBean(name = "MembreManager")
-@RequestScoped
-public class MemberManager {
+@Named(value = "loginMB")
+@Dependent
+public class loginMB {
 
-    @EJB
-    private PersonFacade personFacade;
-    private Person person;
-
-
-    public MemberManager() {
-        this.person= new Person();
+   @EJB
+private PersonFacade personFacade;
+    public loginMB() {
     }
-        public String userExists(String email, String password) {
+   public String userExists(String email, String password) {
         boolean b;
         b = false;
         Person user=null;
@@ -46,21 +37,10 @@ public class MemberManager {
         }
         if (b) {
             context.getExternalContext().getSessionMap().put("user", user);
-            return "AdminDashbord";
+            return "home";
         } else {
             return "login";
         }
 
-    }
-               public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person= person;
-    }
-        }
-      
-
-    
-
+    } 
+}

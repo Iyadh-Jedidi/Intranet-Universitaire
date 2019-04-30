@@ -23,9 +23,11 @@
             </div>
             <div class="submit">
                 <h:commandButton action="#{MembreManager.userExists(MembreManager.person.email,MembreManager.person.password)}" value="signin" class="btn btn-lg btn-success" />
+                <h:commandButton value="cancel" action="index" /> 
             </div>
             <h:messages class="error" style="margin-left: 25px; margin-top: 10px;" />
         </h:form>
+        
         
             
     </h:body>
