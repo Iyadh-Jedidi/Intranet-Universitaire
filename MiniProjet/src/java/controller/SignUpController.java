@@ -3,42 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controller;
 
 import boundary.PersonFacade;
-import java.io.IOException;
 import javax.ejb.EJB;
 import javax.inject.Named;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Person;
 
 /**
  *
  * @author iyadh
  */
-@Named(value = "personneView")
+
+@Named(value = "signUpController")
 @RequestScoped
-@ManagedBean(name = "personView")
-
-public class PersonView {
-
+@ManagedBean(name = "signUpController")
+public class SignUpController {
     @EJB
     private PersonFacade personFacade;
     private Person person;
 
     /**
-     * Creates a new instance of PersonneView
+     * Creates a new instance of SignUpController
      */
-    public PersonView() {
+    public SignUpController() {
         this.person=new Person();
     }
     public Person getPerson(){
@@ -47,14 +38,9 @@ public class PersonView {
     public void setPerson(Person person) {
         this.person= person;
     }
-    
-    
-    public int getNumberOfPersonne(){
-        return personFacade.findAll().size();
+    public String postPerson(){
+        this.personFacade.create(person);
+        return "home";
     }
     
-    
-    
 }
-    
-
