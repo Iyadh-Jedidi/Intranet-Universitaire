@@ -5,11 +5,12 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Facelet Title</title>
+
     </h:head>
     <h:body>        
         <h:dataTable id="person" var="p" value="#{personView.ALL}">
 			    			    
-            <h:column   >
+            <h:column>
                <f:facet name="header"> nom</f:facet>
                #{p.name}
             </h:column>
@@ -30,6 +31,16 @@
              <f:facet name="header"> Role</f:facet>
              #{p.role}
             </h:column>
+            <h:column>
+             <f:facet name="header"> Delete</f:facet>
+                <h:form>
+                    <h:commandButton action="#{personView.delete(p)}" value="delete" class="btn btn-lg btn-success" />
+                </h:form>
+            </h:column>
+            
+            
+            
+            
 
 
         </h:dataTable>

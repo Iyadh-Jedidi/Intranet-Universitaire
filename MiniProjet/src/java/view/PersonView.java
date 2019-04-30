@@ -57,6 +57,9 @@ public class PersonView {
         return personFacade.findAll();
         
     }
+    public void delete(Person test){
+        this.personFacade.remove(test);
+    }
     
     
     
