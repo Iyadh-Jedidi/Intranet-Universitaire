@@ -5,11 +5,12 @@
         <group>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Person.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/conf/persistence.xml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/WEB-INF/web.xml</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/boundary/AbstractFacade.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/view/PersonView.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/login.xhtml</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/register.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/welcome.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/home.xhtml</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/boundary/PersonFacade.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/logout.xhtml</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/index.xhtml</file>

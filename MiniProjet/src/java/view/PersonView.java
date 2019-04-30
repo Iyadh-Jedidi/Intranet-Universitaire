@@ -10,6 +10,7 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import model.Person;
 
 /**
@@ -35,6 +36,10 @@ public class PersonView {
     public Person getPerson(){
         return person;
     }
+    public void setPerson(Person person) {
+        this.person= person;
+    }
+    
     
     public int getNumberOfPersonne(){
         return personFacade.findAll().size();
@@ -42,6 +47,25 @@ public class PersonView {
     public String postPerson(){
         this.personFacade.create(person);
         return "home";
+    }
+    public String userExists(String email, String password) {
+        boolean b;
+        b = false;
+        Person user=null;
+        FacesContext context = FacesContext.getCurrentInstance();
+        for (int i = 0; i < personFacade.findAll().size(); i++) {
+            if (email.equals(personFacade.findAll().get(i).getEmail()) && password.equals(personFacade.findAll().get(i).getPassword())) {
+                b = true;
+                user=personFacade.findAll().get(i);
+            }
+        }
+        if (b) {
+            context.getExternalContext().getSessionMap().put("user", user);
+            return "home";
+        } else {
+            return "login";
+        }
+
     }
     
 }
