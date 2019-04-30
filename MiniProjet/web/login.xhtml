@@ -1,17 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>LOG IN</title>
     </h:head>
     <h:body>
         <h:form>
-            email:
-            <h:inputText value="#{personView.person.email}"/><br/>
-            Password:
-            <h:inputText value="#{personView.person.password}" /><br/>
-            <h:commandButton  value="Sign In" action="#{personView.postPerson()}" />
+            <div class="form-group" style="margin-bottom: 13px;">
+                <span class="form-control">Email :</span>
+                <h:inputText class="form-control" value="#{personView.person.email}" validatorMessage="entrez votre email">
+                    <f:validateRegex pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
+                </h:inputText>
+            </div>
+            <div class="form-group" style="margin-bottom: 13px;">
+                <span class="form-control">Password :</span>
+                <h:inputSecret class="form-control" value="#{personView.person.password}" validatorMessage="entrez votre mot de passe">
+                    <f:validateRegex pattern="^[a-zA-Z0-9]{1,}$" />
+                </h:inputSecret>
+            </div>
+            <div class="submit">
+                <h:commandButton action="#{personView.postPerson()}" value="Sign in" class="btn btn-lg btn-success" />
+            </div>
+            <h:messages class="error" style="margin-left: 25px; margin-top: 10px;" />
+                      
         </h:form>
         
             
