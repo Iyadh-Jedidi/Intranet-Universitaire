@@ -6,10 +6,19 @@
 package view;
 
 import boundary.PersonFacade;
+import java.io.IOException;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Person;
 
 /**
@@ -35,13 +44,17 @@ public class PersonView {
     public Person getPerson(){
         return person;
     }
+    public void setPerson(Person person) {
+        this.person= person;
+    }
+    
     
     public int getNumberOfPersonne(){
         return personFacade.findAll().size();
     }
-    public String postPerson(){
-        this.personFacade.create(person);
-        return "home";
-    }
+    
+    
     
 }
+    
+

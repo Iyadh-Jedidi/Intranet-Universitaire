@@ -16,59 +16,69 @@
 
    
     <h:body>
-        <div class="sidebar-wrapper" id="sidebar-wrapper">
-        
-        <ul class="nav">
-          <li>
-                  <a href="#">
-                      
-                        <i class="now-ui-icons education_atom"></i>
-                      
-                      <p>llllll</p>
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="#">
-                      
-                        <i class="now-ui-icons location_map-big"></i>
-                      
-                      <p>llllll</p>
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="./notifications.html">
-                      
-                        <i class="now-ui-icons ui-1_bell-53"></i>
-                      
-                      <p>Notifications</p>
-                  </a>
-              </li>
-              
-              <li>
-                  <a href="./user.html">
-                      
-                        <i class="now-ui-icons users_single-02"></i>
-                      
-                      <p>User Profile</p>
-                  </a>
-              </li>
-         </ul>
-        </div>
-        <a class="nav-link" href="#pablo">
-      <i class="now-ui-icons users_single-02"></i>
-      <p>
-        <span class="d-lg-none d-md-block">Account</span>
-      </p>
-    </a>
-        <div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.xhtml"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                <li><a href="register.xhtml"><span class="glyphicon glyphicon-log-in"></span>Sign up</a></li>
-            </ul>
-        </div>
+            <div class="row">
+                <div class="col-md-12 header">
+                    <ui:insert name="header">
+                        <h1><a href="">Heading</a></h1>
+                    </ui:insert>
+                </div>
+            </div>
 
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-md-12 menu">
+                    <ui:insert name="menu">
+                        <div class="row">
+                            <nav class="navbar navbar-inverse">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>                        
+                                        </button>
+                                        <a class="navbar-brand" href="#">WebSiteName</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="myNavbar">
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="#">Home</a></li>
+                                            <li class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Page 1-1</a></li>
+                                                    <li><a href="#">Page 1-2</a></li>
+                                                    <li><a href="#">Page 1-3</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about.xhtml">About</a></li>
+                                            <li><a href="contact.xhtml">Contact</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="login.xhtml"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                                            <li><a href="register.xhtml"><span class="glyphicon glyphicon-log-in"></span>Sign up</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </ui:insert>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 content-area">
+                    <div class="content">
+                        <ui:insert name="content">
+                            Content
+                        </ui:insert>
+                    </div>
+                    <div class="sidebar">
+                        <ui:insert name="sidebar">
+                            sidebar
+                        </ui:insert>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-12 footer">
                     <ui:insert name="footer">
@@ -79,9 +89,7 @@
 
         </div>
 
-       <h:outputLink value="login.xhtml" >login</h:outputLink><br/>
-        <h:outputLink  value="register.xhtml" >Register</h:outputLink><br/>
+
     </h:body>
 
 </html>
-
