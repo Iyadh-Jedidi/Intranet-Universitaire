@@ -17,31 +17,31 @@ import model.Person;
  *
  * @author iyadh
  */
-
-@Named(value = "signUpController")
+@Named(value = "adminController")
 @RequestScoped
-@ManagedBean(name = "signUpController")
-public class SignUpController {
+@ManagedBean(name = "adminController")
+public class adminController {
     @EJB
     private PersonFacade personFacade;
     private Person person;
-
     /**
-     * Creates a new instance of SignUpController
+     * Creates a new instance of adminController
      */
-    public SignUpController() {
-        this.person=new Person();
-    }
     public Person getPerson(){
         return person;
     }
     public void setPerson(Person person) {
         this.person= person;
     }
+    public adminController() {
+        this.person=new Person();
+    }
     public String postPerson(){
         this.personFacade.create(person);
-        return "home";
+        return "viewComptes?faces-redirect=true";
     }
-    
+    public void delete(Person test){
+        this.personFacade.remove(test);
+    }
     
 }

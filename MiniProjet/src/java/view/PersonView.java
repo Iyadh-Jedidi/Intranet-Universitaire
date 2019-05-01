@@ -7,6 +7,7 @@ package view;
 
 import boundary.PersonFacade;
 import java.io.IOException;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -25,7 +26,7 @@ import model.Person;
  *
  * @author iyadh
  */
-@Named(value = "personneView")
+@Named(value = "personView")
 @RequestScoped
 @ManagedBean(name = "personView")
 
@@ -34,6 +35,9 @@ public class PersonView {
     @EJB
     private PersonFacade personFacade;
     private Person person;
+
+
+    
 
     /**
      * Creates a new instance of PersonneView
@@ -49,9 +53,11 @@ public class PersonView {
     }
     
     
-    public int getNumberOfPersonne(){
-        return personFacade.findAll().size();
+    public List getALL(){
+        return personFacade.findAll();
+        
     }
+    
     
     
     
