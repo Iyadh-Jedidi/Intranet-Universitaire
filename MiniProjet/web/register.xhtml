@@ -1,27 +1,106 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Register</title>
+        <title>LOGIN</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" />
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+         <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="resources/css/coda-slider.css" type="text/css" charset="utf-8" />
     </h:head>
-    <h:body>
-       
-        <h:form>
-            <h:outputLabel value="Sign Up : "/><br/>
-            name
-            <h:inputText value="#{signUpController.person.name}"/><br/>
-            lastname
-            <h:inputText value="#{signUpController.person.lastname}"/><br/>
-            email:
-            <h:inputText value="#{signUpController.person.email}"/><br/>
-            password:
-            <h:inputSecret value="#{signUpController.person.password}" /><br/>
-            role:
-            <h:inputText value="#{signUpController.person.role}"/><br/>
-            <h:commandButton  value="Sign Up" action="#{signUpController.postPerson()}" />
-            <h:commandButton value="cancel" action="index" /> 
-        </h:form>
+    
+    <h:body styleClass="cyan lighten-5">
+        <div id="slider">
+	<div id="templatemo_wrapper">
+
+		<div id="templatemo_social">
+        
+        </div> <!-- end of social -->
+        
+        <div id="templatemo_main">
+        	<div id="templatemo_sidebar">
+            	<div id="header"><h1><a href="#">Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis</a></h1></div>
+                
+                <div id="menu">
+                    <ul class="navigation">
+                    <li><a href="index.xhtml">Home</a></li>
+                    <li><a href="forum.xhtml">Forum</a></li>
+                    <li><a href="index.xhtml">Services</a></li>
+                    <li><a href="login.xhtml" >SignIn</a></li>
+                    <li><a href="#register" class="selected">SignUp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="templatemo_content">
+            <div class="scroll">
+                <div class="scrollContainer">
+                    <div class="panel valign-wrapper" style="width:100%;height:575px;" id="register">
+                        <div class="container">
+                            <div class="center-align">
+                                <div class="row" style="">
+                                    <div class="col s6 offset-s3" style="width: 321.75px;">
+                                         <div class="card">
+                                            
+                                            <div class="card-content">
+                                                <img class="responsive-img" src="FST.png" style="max-width: 64px;" />
+                                                    <div class="left-align">
+                                        <h:form id="form-login">
+                                            <div class="row">
+                                                <div class="col s12 input-field">
+                                                    <h:inputText id="name" value="#{signUpController.person.name}" required="true" requiredMessage="Name required" />
+                                                    <h:outputLabel for="name" value="Name" />
+                                                </div>
+                                                
+                                                 <div class="col s12 input-field">
+                                                    <h:inputText id="lastname" value="#{signUpController.person.lastname}" required="true" requiredMessage="LastName required" />
+                                                    <h:outputLabel for="lastname" value="LastName" />
+                                                </div>
+                                                
+                                                <div class="col s12 input-field">
+                                                    <h:inputText id="email" value="#{loginController.person.email}" required="true" requiredMessage="Email required" />
+                                                    <h:outputLabel for="email" value="Email" />
+                                                </div>
+                                                
+                                                <div class="col s12 input-field">
+                                                    <h:inputSecret id="password" required="true" value="#{loginController.person.password}" requiredMessage="Password required!" />
+                                                    <h:outputLabel for="password" value="Password" />
+                                                </div>
+                                                 <div class="col s12 input-field">
+                                                     
+                                                    <h:inputText id="role" required="true" value="#{signUpController.person.role}" requiredMessage="Role required!" />
+                                                    <h:outputLabel for="role" value="Role" />
+                                                </div>
+                                                <div class="col s12 input-field">
+
+            
+                                                    <h:commandButton action="#{signUpController.postPerson()}" value="Sign Up" styleClass="btn btn-large" />
+                                                </div>
+                                                 
+                                                    
+                                               
+                                            </div>
+                                        </h:form>
+                                        <h:form>
+                                            <h:commandButton value="cancel" action="index?faces-redirect=true" styleClass="btn btn-large"/> 
+                                        </h:form>
+                                                    </div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+           
+        <script>
+            $(document).on("ready",function(){
+                $('#login-page').css({'height': window.innerHeight + 'px'});
+            });
+        </script>
     </h:body>
 </html>
+
+
 
