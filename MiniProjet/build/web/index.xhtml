@@ -1,95 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-   
-       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <h:outputStylesheet name="/css/bootstrap.min.css"/>
-        <h:outputStylesheet name="/css/style.css"/>
-        <h:outputScript name="/js/jQuery.js"/>
-         <h:outputScript name="/js/bootstrap.min.js"/>
-        <title>Facelets Template</title>
-    </h:head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FST</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 
-   
-    <h:body>
-            <div class="row">
-                <div class="col-md-12 header">
-                    <ui:insert name="header">
-                        <h1><a href="">Heading</a></h1>
-                    </ui:insert>
-                </div>
-            </div>
+<link rel="stylesheet" href="resources/css/coda-slider.css" type="text/css" charset="utf-8" />
 
-        <div class="container">
+
+
+</h:head>
+<h:body>
+
+<div id="slider">
+	<div id="templatemo_wrapper">
+
+		<div id="templatemo_social">
         
-            <div class="row">
-                <div class="col-md-12 menu">
-                    <ui:insert name="menu">
-                        <div class="row">
-                            <nav class="navbar navbar-inverse">
-                                <div class="container-fluid">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>                        
-                                        </button>
-                                        <a class="navbar-brand" href="#">WebSiteName</a>
-                                    </div>
-                                    <div class="collapse navbar-collapse" id="myNavbar">
-                                        <ul class="nav navbar-nav">
-                                            <li class="active"><a href="#">Home</a></li>
-                                            <li class="dropdown">
-                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Page 1-1</a></li>
-                                                    <li><a href="#">Page 1-2</a></li>
-                                                    <li><a href="#">Page 1-3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about.xhtml">About</a></li>
-                                            <li><a href="contact.xhtml">Contact</a></li>
-                                        </ul>
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li><a href="login.xhtml"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                                            <li><a href="register.xhtml"><span class="glyphicon glyphicon-log-in"></span>Sign up</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                    </ui:insert>
+        </div> <!-- end of social -->
+        
+        <div id="templatemo_main">
+        	<div id="templatemo_sidebar">
+            	<div id="header"><h1><a href="#">Faculté des Sciences Mathématiques, Physiques et Naturelles de Tunis</a></h1></div>
+                
+                <div id="menu">
+                    <ul class="navigation">
+                    <li><a href="#home" class="selected">Home</a></li>
+                    <li><a href="forum.xhtml">Forum</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="login.xhtml">SignIn</a></li>
+                    <li><a href="register.xhtml">SignUp</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 content-area">
-                    <div class="content">
-                        <ui:insert name="content">
-                            Content
-                        </ui:insert>
+            </div> <!-- end of sidebar -->
+            
+        <div id="templatemo_content">
+            <div class="scroll">
+                <div class="scrollContainer">
+                    
+                    <div class="panel" id="home">
+                        <h2>Welcome to FST</h2>   
+                        
+                        <p><em>About FST.</em></p>	
+                        <a href="#"><img src="FST.png" alt="Image 1" class="image_wrapper image_fl" /></a>        
+                        
+                      <p align="justify">blablabla</p>
+
+                        <div class="cleaner cleaner_h40"></div>
+                        <h3>more</h3>
+                        
+                        <ul class="tmo_list">
+                            <li><a href="#" class="service_one">MOOOOOOOOREEEEE</a></li>    
+                        </ul>
                     </div>
-                    <div class="sidebar">
-                        <ui:insert name="sidebar">
-                            sidebar
-                        </ui:insert>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 footer">
-                    <ui:insert name="footer">
-                        footer
-                    </ui:insert>
-                </div>
-            </div>
-
-        </div>
-
-
-    </h:body>
-
+                    
+                                    
+                </div> <!-- end scrollContainer -->
+				</div>
+            </div> <!-- end of content -->
+            
+            <div class="cleaner"></div>
+        </div> <!-- end of main -->
+    
+    	
+        <div id="templatemo_footer">
+        
+           	Copyright © 2048 <a href="#">Your Company Name</a><br /> <!-- Credit: www.templatemo.com -->
+            
+            <div class="cleaner"></div>
+		</div>       
+        
+    </div> <!-- end of wrapper -->
+</div> <!-- end of slider -->
+<!-- templatemo 278 cafe bakery -->
+<!-- 
+Cafe Bakery Template 
+http://www.templatemo.com/preview/templatemo_278_cafe_bakery 
+-->
+</h:body>
 </html>
