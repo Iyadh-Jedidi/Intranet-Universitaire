@@ -3,18 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Person.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/conf/persistence.xml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/WEB-INF/web.xml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/boundary/AbstractFacade.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/view/PersonView.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/viewComptes.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/profile.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/adminController.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/QuestionController.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/login.xhtml</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/register.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/home.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/boundary/PersonFacade.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/logout.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Question.java</file>
             <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/index.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/conf/MANIFEST.MF</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Person.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/admin.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/SignUpController.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/addCompte.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/view/PersonView.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/loginController.java</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/home.xhtml</file>
+            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/logout.xhtml</file>
         </group>
     </open-files>
 </project-private>
