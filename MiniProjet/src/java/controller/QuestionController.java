@@ -42,7 +42,7 @@ public class QuestionController {
         System.out.println(idUser);
         this.questionFacade.create(question);
         context.addMessage(null, new FacesMessage("Question posé"));
-        return "home?faces-redirect=true";
+        return "index?faces-redirect=true";
     }
     public List showAll(){
         List<Question> questions = this.questionFacade.findAll();

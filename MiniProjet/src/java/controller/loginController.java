@@ -70,10 +70,10 @@ public class loginController {
             context.getExternalContext().getSessionMap().put("user", user);
             if (user.getName().equals("admin")){
                 isLogged=true;
-                return "admin?faces-redirect=true";
+                return "index?faces-redirect=true";
  
             }else
-                return "home?faces-redirect=true";
+                return "index?faces-redirect=true";
         } else {
             isLogged=true;
             context.addMessage(null, new FacesMessage("Email ou mot passe est incorrect"));
