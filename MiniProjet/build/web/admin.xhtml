@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+      xmlns:h="http://xmlns.jcp.org/jsf/html"><!--
     <h:head>
         <title>Admin</title>
     </h:head>
@@ -13,3 +14,40 @@
     </h:body>
 </html>
 
+=======
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">-->
+<h:head>
+    <title>ADMIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="resources/css/coda-slider.css" type="text/css" charset="utf-8" />
+</h:head>
+<h:body styleClass="cyan lighten-5">
+    <div id="slider">
+	<div id="templatemo_wrapper">
+            <div id="templatemo_social">
+            </div> <!-- end of social -->
+            <div id="templatemo_main">
+                <div id="templatemo_sidebar">
+                    <div id="header"><h1><a href="#"> Welcome, #{user.name}</a></h1></div>
+                    <div id="menu">
+                        <ul class="navigation">
+                            <li><a href="profile?faces-redirect=true" id="profile" class="selected">Profile</a></li>
+                            <li><a href="#add">Add Count</a></li>
+                            <li><a href="#view">View Count</a></li>
+                        </ul>
+                        <h:panelGroup  rendered="#{not empty loginController.isLogged}">
+                            <h:form>
+                                <h:commandButton action="#{loginController.logout()}" value="Logout" class="btn btn-lg btn-success" />
+                            </h:form>
+                        </h:panelGroup>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>
