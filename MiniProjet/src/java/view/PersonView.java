@@ -6,11 +6,20 @@
 package view;
 
 import boundary.PersonFacade;
+import java.io.IOException;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Person;
 
 /**
@@ -26,9 +35,9 @@ public class PersonView {
     @EJB
     private PersonFacade personFacade;
     private Person person;
+
+
     
-
-
 
     /**
      * Creates a new instance of PersonneView
@@ -47,10 +56,6 @@ public class PersonView {
     public List getALL(){
         return personFacade.findAll();
         
-    }
-    public String selectPerson(Long selectId){
-        Person selectPerson=personFacade.find(selectId);
-        return selectPerson.getName();
     }
     
     

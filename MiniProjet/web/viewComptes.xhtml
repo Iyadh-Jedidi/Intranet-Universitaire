@@ -12,35 +12,24 @@
 			    			    
             <h:column>
                <f:facet name="header"> nom</f:facet>
-               <h:form>
-                    <h:inputText value="#{p.name}"/>
-               </h:form>
-               
+               #{p.name}
             </h:column>
 
             <h:column>
              <f:facet name="header"> prénom</f:facet>
-                <h:form>
-                    <h:inputText value="#{p.lastname}"/>
-                </h:form>
+             #{p.lastname}
             </h:column>
             <h:column>
-                <f:facet name="header"> Email</f:facet>
-                <h:form>   
-                    <h:inputText value="#{p.email}"/>
-                </h:form>
+             <f:facet name="header"> Email</f:facet>
+             #{p.email}
             </h:column>
             <h:column>
-                <f:facet name="header"> Mot de passe</f:facet>
-                <h:form>
-                    <h:inputText value="#{p.password}"/>
-                </h:form>
+             <f:facet name="header"> Mot de passe</f:facet>
+             #{p.password}
             </h:column>
             <h:column>
-                <f:facet name="header"> Role</f:facet>
-                <h:form>      
-                    <h:inputText value="#{p.role}"/>
-                </h:form>
+             <f:facet name="header"> Role</f:facet>
+             #{p.role}
             </h:column>
             <h:column>
              <f:facet name="header"> Delete</f:facet>
@@ -48,18 +37,13 @@
                     <h:commandButton action="#{adminController.delete(p)}" value="delete" class="btn btn-lg btn-success" />
                 </h:form>
             </h:column>
-            <h:column>
-             <f:facet name="header"> modifie</f:facet>
-                <h:form>
-                    <h:commandButton action="#{adminController.modifie(p)}" value="modifie" class="btn btn-lg btn-success" />
-                </h:form>
-            </h:column>
+            
+            
+            
             
 
+
         </h:dataTable>
-        <h:form>
-            <h:commandButton value="cancel" action="admin?faces-redirect=true" /> 
-        </h:form>
     </h:body>
 </html>
 

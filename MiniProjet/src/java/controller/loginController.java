@@ -75,7 +75,7 @@ public class loginController {
             }else
                 return "home?faces-redirect=true";
         } else {
-            isLogged=false;
+            isLogged=true;
             context.addMessage(null, new FacesMessage("Email ou mot passe est incorrect"));
             return "login";
         }

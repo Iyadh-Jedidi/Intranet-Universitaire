@@ -40,11 +40,8 @@ public class adminController {
         this.personFacade.create(person);
         return "viewComptes?faces-redirect=true";
     }
-    public void delete(Person deletePerson){
-        this.personFacade.remove(deletePerson);
-    }
-    public void modifie(Person modifiePerson ){
-        this.personFacade.edit(modifiePerson);
+    public void delete(Person test){
+        this.personFacade.remove(test);
     }
     
 }

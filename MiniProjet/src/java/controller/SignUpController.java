@@ -8,6 +8,7 @@ package controller;
 import boundary.PersonFacade;
 import javax.ejb.EJB;
 import javax.inject.Named;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import model.Person;
@@ -39,7 +40,8 @@ public class SignUpController {
     }
     public String postPerson(){
         this.personFacade.create(person);
-        return "home";
+        
+        return "login?faces-redirect=true";
     }
     
     
