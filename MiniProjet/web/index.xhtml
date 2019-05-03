@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
           <h:head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png"/>
@@ -19,48 +20,60 @@
   <link href="./assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link href="./assets/css/test.css" rel="stylesheet" />
 </h:head>
     <h:body class="index-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" ccolor-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="login.xhtml">
-          SignIn</a>
-          <a class="navbar-brand" href="register.xhtml">
-          SignUp </a>
+          <a class="navbar-brand" href="index.xhtml">home</a>
+        <c:if test="#{empty user}">
+            <a class="navbar-brand" href="login.xhtml">
+              SignIn</a>
+              <a class="navbar-brand" href="register.xhtml">
+              SignUp </a>
+        </c:if>
+        
+          <c:if test="#{user.name eq 'admin' }">
+            <a class="navbar-brand" href="viewComptes.xhtml">
+              view Comptes</a>
+            <a class="navbar-brand" href="addCompte.xhtml">
+              add Compte</a>
+              
+            </c:if>
+          <c:if test="#{not empty user}">
+            <h:form class="navbar-brand">
+                <h:commandButton action="#{loginController.logout()}" value="logout" class="navbar-brand" />
+            </h:form>
+        </c:if>
           
           
           
-          <!--if compte = admin-->
-          
-          
-          
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-             <a class="navbar-brand" href="profile.xhtml">
-          <i class="material-icons">face</i>Profile </a>
-             <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
+            <c:if test="#{not empty user}">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="profile.xhtml">
+                    <i class="material-icons">face</i>Profile </a>
+                </li>
+            </c:if>
+            <li class="nav-item">
+                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
         </ul>
       </div>
     </div>
@@ -78,12 +91,58 @@
     </div>
   </div>
    <div class="main main-raised">
-    <div class="section section-basic">
-        <div class="container">
-            
+       <c:if test="#{not empty user}">
+       <div class="section section-tabs" style="width: 38%;margin-left: 26%">
+            <div class="container">
+                <h4 class="title">
+                <span class="tim-note">Poste</span> Question </h4>
+                <h:form>    
+                    
+                    <h:inputText class="form-control" value="#{questionController.question.question}"/><br/>
+                    <h:commandButton class="btn btn-primary btn-round"  value="post" action="${questionController.postQuestion(user.id)}" />
+                    
+                </h:form>
+        
+          
+            </div>
         </div>
-    </div>
+        </c:if>
+    
+        
        
-</div>
-    </h:body>
+       <c:forEach id="test" items="#{questionController.showAll()}" var="item">
+           <div class="main-section">
+		<div class="content">
+			<div class="top-section">
+				<div class="user-img">
+					<img src="http://nicesnippets.com/demo/man.png"/>
+				</div>
+				<div class="user-detail">
+                                    <h:outputText value="#{personView.selectPerson(item.idUser)} " />
+					
+				</div>
+				<div style="clear:both;"></div>			
+			</div>
+			<div class="comment-content">
+				<h:outputText value="#{item.question}" />
+			</div>
+
+			<div class="sub-comment"></div>
+                        <c:if test="#{not empty user}">
+                            <div class="comment-box box">
+
+                                    <div style="clear:both;"></div>
+                                    <div class="comment-btn">
+                                            <input type="textarea" class="text" rows="10" cols="30" placeholder="Add a comment..."/>
+                                    </div>
+                                    <button class="post-comment-btn">Post Comment</button>
+                            </div>
+                            </c:if>
+		</div> <br/> <br/>    
+		
+            </div>
+        </c:forEach>
+        </div>
+   
+</h:body>
 </html>

@@ -57,6 +57,11 @@ public class PersonView {
         return personFacade.findAll();
         
     }
+    public String selectPerson(Long selectId){
+        Person selectPerson=personFacade.find(selectId);
+        return (selectPerson.getName()+" "+selectPerson.getLastname());
+    }
+    
     
     
     
