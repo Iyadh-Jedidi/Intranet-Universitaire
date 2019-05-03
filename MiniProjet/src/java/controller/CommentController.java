@@ -29,6 +29,7 @@ public class CommentController {
     
     private CommentFacade commentFacade;
     private Comment comment;
+
     
     public CommentController (){
         this.comment = new Comment ();
@@ -44,6 +45,9 @@ public class CommentController {
     
     
     public String postComment(Long idQuestion){
+
+        System.out.println(idQuestion);
+
         this.comment.setIdQuesion(idQuestion);
         this.commentFacade.create(comment);
         return "index?faces-redirect=true";

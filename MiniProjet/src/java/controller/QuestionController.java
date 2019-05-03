@@ -20,7 +20,6 @@ import model.Question;
 import model.Comment;
 
 
-
 @Named(value = "questionController")
 @RequestScoped
 @ManagedBean(name = "questionController")
@@ -29,7 +28,9 @@ public class QuestionController {
     private QuestionFacade questionFacade;
     private CommentFacade commentFacade;
     private Question question;
+
     FacesContext context = FacesContext.getCurrentInstance();
+
 
     
     public QuestionController() {
@@ -47,7 +48,7 @@ public class QuestionController {
         this.questionFacade.create(question);
         return "index?faces-redirect=true";
     }
-    
+
     public List showAll(){
         List<Question> questions = this.questionFacade.findAll();
         return questions;
