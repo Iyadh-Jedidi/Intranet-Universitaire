@@ -25,7 +25,7 @@
 </h:head>
 
 <body class="login-page sidebar-collapse">
-  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" ccolor-on-scroll="100" id="sectionsNav">
+  <nav class="navbar  navbar-color-on-scroll fixed-top navbar-expand-lg"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
           <a class="navbar-brand" href="index.xhtml">home</a>
@@ -45,13 +45,13 @@
             </c:if>
           <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
-                <h:commandButton action="#{loginController.logout()}" value="logout" class="navbar-brand" />
+                <h:commandButton action="#{loginController.logout()}" value="logout" class=" btn btn-primary btn-round" />
             </h:form>
         </c:if>
           
           
           
-        
+
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -100,7 +100,6 @@
                   </a>
                 </div>
               </div>
-              <p class="description text-center">Or Be Classical</p>
               <div class="card-body">
                 
                 <div class="input-group">

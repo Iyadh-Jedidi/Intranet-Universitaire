@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
   <h:head>
   <meta charset="utf-8" />
@@ -23,7 +23,7 @@
 </h:head>
 
 <h:body class="profile-page sidebar-collapse">
- <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" ccolor-on-scroll="100" id="sectionsNav">
+ <nav class="navbar  navbar-color-on-scroll fixed-top navbar-expand-lg"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
           <a class="navbar-brand" href="index.xhtml">home</a>
@@ -43,20 +43,20 @@
             </c:if>
           <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
-                <h:commandButton action="#{loginController.logout()}" value="logout" class="navbar-brand" />
+                <h:commandButton action="#{loginController.logout()}" value="logout" class=" btn btn-primary btn-round" />
             </h:form>
         </c:if>
           
           
           
-        
+
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             <c:if test="#{not empty user}">
                 <li class="nav-item">
                     <a class="navbar-brand" href="profile.xhtml">
-                    <i class="material-icons">face</i>Profile </a>
+                    <i class="material-icons">face</i>#{user.name} </a>
                 </li>
             </c:if>
             <li class="nav-item">
