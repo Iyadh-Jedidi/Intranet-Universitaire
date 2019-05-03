@@ -86,5 +86,10 @@ public class loginController {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index?faces-redirect=true";
     }
+    public String edit(Person test){
+        this.personFacade.edit(test);
+        return "profile?faces-redirect=true";
+        
+    }
     
 }
