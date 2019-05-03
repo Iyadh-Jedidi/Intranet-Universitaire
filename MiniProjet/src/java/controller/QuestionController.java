@@ -15,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import model.Question;
 
+
 @Named(value = "questionController")
 @RequestScoped
 @ManagedBean(name = "questionController")

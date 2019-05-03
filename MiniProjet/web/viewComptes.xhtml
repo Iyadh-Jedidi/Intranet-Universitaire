@@ -84,7 +84,7 @@
     <div class="main main-raised">
     <div class="section section-basic">
         <div class="container">
-                 <h:dataTable id="person" var="p" value="#{personView.ALL}" class="table table-bordered table-striped tableOutput">
+           <h:dataTable id="person" var="p" value="#{personView.ALL}" class="table table-bordered table-striped tableOutput">
 			    			    
             <h:column>
                <f:facet name="header">Name</f:facet>
@@ -103,11 +103,20 @@
             <h:column>
              <f:facet name="header"> Role</f:facet>
              #{p.role}
+             <h:inputText value="#{p.role}"/>
             </h:column>
             <h:column>
              <f:facet name="header"> Delete</f:facet>
                 <h:form>
                     <h:commandButton action="#{adminController.delete(p)}" value="delete" class="btn btn-primary btn-round btn-lg btn-success" />
+                
+              
+                </h:form>
+            </h:column>
+             <h:column>
+                <f:facet name="header"> Edit</f:facet>
+                <h:form>
+                    <h:commandButton action="#{adminController.edit(p)}" value="edit" class="btn btn-primary btn-round btn-lg btn-success" />
                 
               
                 </h:form>

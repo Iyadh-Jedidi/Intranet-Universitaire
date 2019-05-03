@@ -43,5 +43,10 @@ public class adminController {
     public void delete(Person test){
         this.personFacade.remove(test);
     }
+    public String edit(Person test){
+        this.personFacade.edit(test);
+        return "viewComptes?faces-redirect=true";
+        
+    }
     
 }
