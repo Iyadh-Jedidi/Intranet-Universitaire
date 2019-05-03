@@ -26,7 +26,7 @@
  <nav class="navbar  navbar-color-on-scroll fixed-top navbar-expand-lg"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-          <a class="navbar-brand" href="index.xhtml">home</a>
+          <a class="navbar-brand" href="index.xhtml">Home</a>
         <c:if test="#{empty user}">
             <a class="navbar-brand" href="login.xhtml">
               SignIn</a>
@@ -36,14 +36,14 @@
         
           <c:if test="#{user.name eq 'admin' }">
             <a class="navbar-brand" href="viewComptes.xhtml">
-              view Comptes</a>
+              View Counts</a>
             <a class="navbar-brand" href="addCompte.xhtml">
-              add Compte</a>
+              Add Counts</a>
               
             </c:if>
           <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
-                <h:commandButton action="#{loginController.logout()}" value="logout" class=" btn btn-primary btn-round" />
+                <h:commandButton action="#{loginController.logout()}" value="Logout" class=" btn btn-primary btn-round" />
             </h:form>
         </c:if>
           

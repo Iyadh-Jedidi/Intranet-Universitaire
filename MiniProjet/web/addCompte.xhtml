@@ -20,13 +20,14 @@
   <link href="./assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
+  
 </h:head>
 
 <h:body class="profile-page sidebar-collapse">
  <nav class="navbar  fixed-top navbar-expand-lg"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-          <a class="navbar-brand" href="index.xhtml">home</a>
+          <a class="navbar-brand" href="index.xhtml">Home</a>
         <c:if test="#{empty user}">
             <a class="navbar-brand" href="login.xhtml">
               SignIn</a>
@@ -36,9 +37,9 @@
         
           <c:if test="#{user.name eq 'admin' }">
             <a class="navbar-brand" href="viewComptes.xhtml">
-              view Comptes</a>
+              View Counts</a>
             <a class="navbar-brand" href="addCompte.xhtml">
-              add Compte</a>
+              Add Counts</a>
               
             </c:if>
           <c:if test="#{not empty user}">

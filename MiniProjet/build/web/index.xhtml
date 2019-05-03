@@ -26,7 +26,7 @@
   <nav class="navbar  navbar-color-on-scroll fixed-top navbar-expand-lg"  id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-          <a class="navbar-brand" href="index.xhtml">home</a>
+          <a class="navbar-brand" href="index.xhtml">Home</a>
         <c:if test="#{empty user}">
             <a class="navbar-brand" href="login.xhtml">
               SignIn</a>
@@ -36,14 +36,14 @@
         
           <c:if test="#{user.name eq 'admin' }">
             <a class="navbar-brand" href="viewComptes.xhtml">
-              view Comptes</a>
+              View Counts</a>
             <a class="navbar-brand" href="addCompte.xhtml">
-              add Compte</a>
+              Add Counts</a>
               
             </c:if>
           <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
-                <h:commandButton action="#{loginController.logout()}" value="logout" class=" btn btn-primary btn-round" />
+                <h:commandButton action="#{loginController.logout()}" value="Logout" class=" btn btn-primary btn-round" />
             </h:form>
         </c:if>
           
@@ -84,7 +84,7 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand">
             <h1>FST Intranet</h1>
-            <h3>Bienvenue chez notre intranet </h3>
+            <h3>Welcome to our Intranet </h3>
           </div>
         </div>
       </div>
@@ -92,15 +92,15 @@
   </div>
    <div class="main main-raised">
        <c:if test="#{not empty user}">
-       <div class="section section-tabs" style="width: 38%;margin-left: 26%">
+       <div class="section section-tabs " style="width: 38%;margin-left: 26%">
             <div class="container">
                 <h4 class="title">
                 <span class="tim-note">Poste</span> Question </h4>
                 <h:form>    
                     
                     <h:inputText class="form-control" value="#{questionController.question.question}"/><br/>
-                    <h:commandButton class="btn btn-primary btn-round"  value="post" action="${questionController.postQuestion(user.id)}" />
                     
+                    <h:commandButton class="btn btn-primary btn-round"  value="post" action="${questionController.postQuestion(user.id)}" />
                 </h:form>
         
           
@@ -135,9 +135,19 @@
                                     <div class="comment-btn">
                                             <input type="textarea" class="text" rows="10" cols="30" placeholder="Add a comment..."/>
                                     </div>
-                                    <button class="post-comment-btn">Post Comment</button>
+                                    <button class="btn btn-primary btn-round post-comment-btn">
+                                        <i class="material-icons">comment</i> Post Comment
+                                    </button>
                             </div>
                             </c:if>
+                        <c:if test="#{empty user}">
+                            <div class="comment-box box">
+
+                                    <div style="clear:both;"></div>
+                                    <a href="login.xhtml" vclass="btn btn-primary btn-link btn-wd btn-lg">
+                                    <i class="material-icons">comment</i> Post Comment</a>
+                            </div>
+                        </c:if>
 		</div> <br/> <br/>    
 		
             </div>
