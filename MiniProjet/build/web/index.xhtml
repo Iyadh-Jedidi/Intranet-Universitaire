@@ -132,12 +132,16 @@
                             <div class="comment-box box">
 
                                     <div style="clear:both;"></div>
-                                    <div class="comment-btn">
-                                            <input type="textarea" class="text" rows="10" cols="30" placeholder="Add a comment..."/>
-                                    </div>
-                                    <button class="btn btn-primary btn-round post-comment-btn">
-                                        <i class="material-icons">comment</i> Post Comment
-                                    </button>
+                                    <h:form>
+                                        <div class="comment-btn">
+                                            
+                                            <h:inputText  class="text" value="#{questionController.comment.comment}"/>
+                                        </div>
+                                        <h:commandButton value ="commrnt" action="#{commentController.postComment(item.id)}" class="btn btn-primary btn-round post-comment-btn"/>
+<!--                                        <button class="btn btn-primary btn-round post-comment-btn">
+                                            <i class="material-icons">comment</i> Post Comment
+                                        </button>-->
+                                    </h:form>
                             </div>
                             </c:if>
                         <c:if test="#{empty user}">
