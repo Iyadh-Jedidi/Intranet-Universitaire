@@ -12,7 +12,7 @@ import model.Comment;
 
 /**
  *
- * @author oumayma
+ * @author iyadh
  */
 @Stateless
 public class CommentFacade extends AbstractFacade<Comment> {
