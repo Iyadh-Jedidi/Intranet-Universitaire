@@ -126,18 +126,26 @@
 			<div class="comment-content">
 				<h:outputText value="#{item.question}" />
 			</div>
+                    <h:dataTable id="comments" var="p" value="#{commentController.selectCommentForPost(item.id)}" class="table table-bordered table-striped tableOutput">
+			    			    
+                            <h:column>
+                               #{p.comment}
+                            </h:column>
+                    </h:dataTable>
+
+                            
 
 			<div class="sub-comment"></div>
                         <c:if test="#{not empty user}">
                             <div class="comment-box box">
 
                                     <div style="clear:both;"></div>
-                                    <div class="comment-btn">
-                                            <input type="textarea" class="text" rows="10" cols="30" placeholder="Add a comment..."/>
-                                    </div>
-                                    <button class="btn btn-primary btn-round post-comment-btn">
-                                        <i class="material-icons">comment</i> Post Comment
-                                    </button>
+                                    <h:form>
+                                        <div class="comment-btn">
+                                            <h:inputText  class="text" value="#{commentController.comment.comment}"/>
+                                        </div>
+                                            <h:commandButton value ="Comment" action="#{commentController.postComment(item.id)}" class="btn btn-primary btn-round post-comment-btn"/>
+                                    </h:form>
                             </div>
                             </c:if>
                         <c:if test="#{empty user}">

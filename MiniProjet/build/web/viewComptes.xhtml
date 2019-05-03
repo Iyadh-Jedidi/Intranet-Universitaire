@@ -98,6 +98,7 @@
             <h:column>
              <f:facet name="header"> Email</f:facet>
              #{p.email}
+             <h:inputText value="#{p.email}"/>
             </h:column>
             
             <h:column>
@@ -109,6 +110,8 @@
              <f:facet name="header"> Delete</f:facet>
                 <h:form>
                     <h:commandButton action="#{adminController.delete(p)}" value="delete" class="btn btn-primary btn-round btn-lg btn-success" />
+                    
+                    <h:commandButton action="#{adminController.edit(p)}" value="Edit" class="btn btn-primary btn-round btn-lg btn-success" />
                 
               
                 </h:form>

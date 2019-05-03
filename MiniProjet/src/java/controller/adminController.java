@@ -10,6 +10,7 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import model.Person;
 
@@ -44,6 +45,7 @@ public class adminController {
         this.personFacade.remove(test);
     }
     public String edit(Person test){
+
         this.personFacade.edit(test);
         return "viewComptes?faces-redirect=true";
         
