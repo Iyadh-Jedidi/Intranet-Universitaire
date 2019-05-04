@@ -1,30 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/viewComptes.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/QuestionController.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/SignUpController.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/controller/adminController.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Question.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/view/PersonView.java</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/web/index.xhtml</file>
-            <file>file:/home/iyadh/NetBeansProjects/MiniProjet/src/java/model/Person.java</file>
-=======
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/controller/adminController.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/nbproject/build-impl.xml</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/model/Person.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/boundary/PersonFacade.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/controller/QuestionController.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/view/PersonView.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/controller/SignUpController.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/boundary/CommentFacade.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/controller/loginController.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/model/Comment.java</file>
-            <file>file:/home/oumayma/Desktop/NewJEEProject/JEEProject/MiniProjet/src/java/model/Question.java</file>
->>>>>>> 430515a3f1d058b51a58840cdba633f06dfd5359
-        </group>
-    </open-files>
 </project-private>
