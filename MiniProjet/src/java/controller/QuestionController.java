@@ -12,12 +12,9 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
+    import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import model.Question;
-import model.Comment;
 
 
 @Named(value = "questionController")
@@ -52,5 +49,10 @@ public class QuestionController {
     public List showAll(){
         List<Question> questions = this.questionFacade.findAll();
         return questions;
+    }
+    public void delete(Question test){
+        System.out.println("fasa5et");
+        this.questionFacade.remove(test);
+        //return "index?faces-redirect=true";
     }
 }

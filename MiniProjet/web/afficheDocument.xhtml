@@ -2,7 +2,8 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
   <h:head>
   <meta charset="utf-8" />
@@ -41,11 +42,6 @@
               Add Counts</a>
               
             </c:if>
-          <c:if test="#{not empty user}">
-          <a class="nav-brand" href="afficheDocument.xhtml">
-              <i class="material-icons">cloud_download</i> Document
-            </a>
-               </c:if>
           <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
                 <h:commandButton action="#{loginController.logout()}" value="logout" class=" btn btn-primary btn-round" />
@@ -87,63 +83,61 @@
         
     </div> 
     <div class="main main-raised">
-    <div class="section section-basic">
-        <div class="container">
-           <h:dataTable id="person" var="p" value="#{personView.ALL}" class="table table-bordered table-striped tableOutput">
-			    			    
-            <h:column>
-               <f:facet name="header">Name</f:facet>
-               #{p.name}
-            </h:column>
-
-            <h:column>
-             <f:facet name="header">LastName</f:facet>
-             #{p.lastname}
-            </h:column>
-            <h:column>
-             <f:facet name="header"> Email</f:facet>
-             #{p.email}
-             <h:inputText value="#{p.email}"/>
-            </h:column>
-            
-            <h:column>
-             <f:facet name="header"> Role</f:facet>
-             #{p.role}
-             <h:inputText value="#{p.role}"/>
-            </h:column>
-            <h:column>
-             <f:facet name="header"> Delete</f:facet>
-                <h:form>
-                    <h:commandButton action="#{adminController.delete(p)}" value="delete" class="btn btn-primary btn-round btn-lg btn-success" />
-                    
-                    <h:commandButton action="#{adminController.edit(p)}" value="Edit" class="btn btn-primary btn-round btn-lg btn-success" />
-<<<<<<< HEAD
-                
-              
-                </h:form>
-            </h:column>
-             <h:column>
-                <f:facet name="header"> Edit</f:facet>
-                <h:form>
-                    <h:commandButton action="#{adminController.edit(p)}" value="edit" class="btn btn-primary btn-round btn-lg btn-success" />
-=======
->>>>>>> 430515a3f1d058b51a58840cdba633f06dfd5359
-                
-              
-                </h:form>
-            </h:column>
-            
-            
-            
-            
-
-
-        </h:dataTable>
-        </div>
-    </div>
-    </div>
-    
+       <c:if test="#{not empty user}">
+            <div class="container">
+    <h:form>
         
+            <p:growl showDetail="true" autoUpdate="true" />
+
+            <h:panelGrid columns="2"  style="margin-left: 25%;margin-right: 25%;">
+                <span class="input-group-text" for="fileUpload">
+                      
+                     
+                <i class="material-icons">cloud_upload</i>Document </span>
+                
+                <p:fileUpload id="fileUpload"
+                              fileUploadListener="#{advancedUploadBean.upload}"
+                              update="dataTable" label="Document    " uploadLabel="save"
+                              cancelLabel="Cancel" allowTypes="/(\.|\/)(gif|jpe?g|png|txt|pdf)$/"
+                              invalidFileMessage="types should be (gif, jpeg, jpg e png)"
+                              sizeLimit="10240000"
+                              invalidSizeMessage="O taille max 100KB."
+                              fileLimit="5"
+                              fileLimitMessage="5 document for once"
+                              multiple="true" auto="false"
+                              onstart="console.log('Starting file upload')"
+                              onerror="console.log('Error in sending request')"
+                              oncomplete="console.log('Submission completed')"
+                             />
+            </h:panelGrid>
+
+            <p:spacer height="20px" />
+            <h:dataTable var="file" id="dataTable" value="#{advancedUploadBean.documents}" class="table table-bordered table-striped tableOutput">
+
+                <f:facet name="header">
+                    Document
+                </f:facet>
+                <p:column width="200">
+                    <p:commandButton value="Download" ajax="false"
+                                     actionListener="#{downloaderBean.download(file)}"
+                                     icon="ui-icon-arrowthick-1-s">
+                        <p:fileDownload value="#{downloaderBean.streamedContent}" />
+                    </p:commandButton>
+                </p:column>
+
+                <p:column headerText="Name">
+                    <h:outputText value="#{file.name}" />
+                </p:column>
+                <p:column width="200">
+                    <p:commandButton value="Delete" ajax="false" actionListener="#{advancedUploadBean.delete_file(file.name)}">
+                    </p:commandButton>
+                </p:column>
+            </h:dataTable>
+        </h:form>
+            </div>
+           
+       </c:if>
+</div>
 
     </h:body>
 </html>

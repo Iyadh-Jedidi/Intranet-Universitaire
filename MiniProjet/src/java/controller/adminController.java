@@ -43,6 +43,7 @@ public class adminController {
     }
     public void delete(Person test){
         this.personFacade.remove(test);
+        
     }
 
      public String edit(Person test){

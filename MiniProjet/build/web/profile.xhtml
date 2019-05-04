@@ -42,6 +42,11 @@
               
             </c:if>
           <c:if test="#{not empty user}">
+          <a class="nav-brand" href="afficheDocument.xhtml">
+              <i class="material-icons">cloud_download</i> Document
+            </a>
+               </c:if>
+          <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
                 <h:commandButton action="#{loginController.logout()}" value="Logout" class=" btn btn-primary btn-round" />
             </h:form>

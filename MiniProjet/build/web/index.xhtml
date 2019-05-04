@@ -42,6 +42,11 @@
               
             </c:if>
           <c:if test="#{not empty user}">
+          <a class="nav-brand" href="afficheDocument.xhtml">
+              <i class="material-icons">cloud_download</i> Document
+            </a>
+               </c:if>
+          <c:if test="#{not empty user}">
             <h:form class="navbar-brand">
                 <h:commandButton action="#{loginController.logout()}" value="Logout" class=" btn btn-primary btn-round" />
             </h:form>
@@ -91,8 +96,8 @@
     </div>
   </div>
    <div class="main main-raised">
-       <c:if test="#{not empty user}">
-       <div class="section section-tabs " style="width: 38%;margin-left: 26%">
+       <c:if  test="#{not empty user}">
+       <div class=" section-tabs card " style="width: 38%;margin-left: 26%;margin-bottom: 5%">
             <div class="container">
                 <h4 class="title">
                 <span class="tim-note">Poste</span> Question </h4>
@@ -110,9 +115,9 @@
     
         
        
-       <c:forEach id="test" items="#{questionController.showAll()}" var="item">
-           <div class="main-section">
-		<div class="content">
+       <c:forEach  id="test" items="#{questionController.showAll()}" var="item">
+           <div class="main-section ">
+		<div class="content card">
 			<div class="top-section">
 				<div class="user-img">
 					<img src="http://nicesnippets.com/demo/man.png"/>
@@ -125,9 +130,15 @@
 			</div>
 			<div class="comment-content">
 				<h:outputText value="#{item.question}" />
+                                <c:if test="#{item.idUser eq user.id}">
+                                    <h:form>
+                                        <h:commandButton style="margin-left: 0%;margin-bottom: 2%" value ="delete Post" action="#{questionController.delete(item)}" class="btn btn-primary btn-round post-comment-btn"/>
+                                    </h:form>
+                                </c:if>
 			</div>
-                    <h:dataTable id="comments" var="p" value="#{commentController.selectCommentForPost(item.id)}" class="table table-bordered table-striped tableOutput">
-			    			    
+                    
+                    
+                    <h:dataTable  style="width: 80%" id="comments" var="p" value="#{commentController.selectCommentForPost(item.id)}" class="table table-bordered table-striped tableOutput">
                             <h:column>
                                #{p.comment}
                             </h:column>
@@ -142,16 +153,15 @@
                                     <div style="clear:both;"></div>
                                     <h:form>
                                         <div class="comment-btn">
-                                            <h:inputText  class="text" value="#{commentController.comment.comment}"/>
+                                            <h:inputText  class="form-control" value="#{commentController.comment.comment}"/>
                                         </div>
-                                            <h:commandButton value ="Comment" action="#{commentController.postComment(item.id)}" class="btn btn-primary btn-round post-comment-btn"/>
+                                            <h:commandButton style="margin-left: 0%" value ="Comment" action="#{commentController.postComment(item.id)}" class="btn btn-primary btn-round post-comment-btn"/>
                                             
                                     </h:form>
                             </div>
                             </c:if>
                         <c:if test="#{empty user}">
                             <div class="comment-box box">
-
                                     <div style="clear:both;"></div>
                                     <a href="login.xhtml" vclass="btn btn-primary btn-link btn-wd btn-lg">
                                     <i class="material-icons">comment</i> Post Comment</a>
